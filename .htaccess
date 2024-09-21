@@ -1,0 +1,13 @@
+<IfMODULE mod_rewrite.c>
+
+#Activar rewrite
+RewriteEngine on
+ErrorDocument 404 http://localhost/ume/error/
+
+#comprobar que las url no las tire si es directorio o fichero
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+
+RewriteRule ^(.*)/(.*) index.php?controlador=$1&accion=$2
+</IfMODULE>
