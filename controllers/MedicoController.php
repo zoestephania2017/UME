@@ -22,9 +22,9 @@ class MedicoController {
     public function nuevo() {
 
         $departamento = new Departamento();
-
+        $ciudad = new Ciudad();
         $departamentos = $departamento->obtenerDepartamento();
-
+        $ciudades = $ciudad->obtenerCiudad(); 
 
         require_once 'views/medico/new.php';
     }
@@ -79,7 +79,6 @@ class MedicoController {
             $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : false;
             $fechaingreso = isset($_POST['fechaingreso']) ? $_POST['fechaingreso'] : false;
 
-
             if ($identidad && $primernombre && $segundonombre && $primerapellido && $segundoapellido && $direccion && $telefono && $genero && $estadocivil && $fechanacimiento && $ciudad && $fechaingreso) {
                 $medico = new Medico();
                 $vista_medico = new MedicoController();
@@ -113,7 +112,8 @@ class MedicoController {
                         $vista_medico->index();
                     }
                 } else {
-                    //Ejecutar la funcion InsertarMedico
+                    try{
+                          //Ejecutar la funcion InsertarMedico
                     $guardar = $medico->insertarMedico();
                     if ($guardar) {
                         $_SESSION['registrar'] = "completado";
@@ -122,6 +122,10 @@ class MedicoController {
                     } else {
                         $_SESSION['registrar'] = "existe";
 
+                        $vista_medico->nuevo();
+                    }
+                    }catch(Exception $e){
+                        $_SESSION['registrar'] = "duplicated";
                         $vista_medico->nuevo();
                     }
                 }

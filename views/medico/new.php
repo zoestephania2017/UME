@@ -32,7 +32,10 @@
                             <script>
                                 mensajeadvertencia();
                             </script>
-
+                            <?php elseif (isset($_SESSION['registrar']) && $_SESSION['registrar'] == 'duplicated'): ?>
+                            <script>
+                                messageDuplicated('El campo id ya existe, por favor coloca otro');
+                                </script>
                         <?php elseif (isset($_SESSION['registrar']) && $_SESSION['registrar'] == 'existe'): ?>
                             <script>
                                 mensajeerror();
@@ -124,8 +127,10 @@
 
                                 <select class="form-select" id="ciudad"  name="ciudad" required>
                                     
-                                    <option selected disabled value=''>Seleccione una Ciudad</option>;
-
+                                <option selected disabled value="">Seleccione un departamento</option>
+                                    <?php while ($ciudad = $ciudades->fetch_object()): ?> 
+                                        <option value="<?= $ciudad->id ?>"><?= $ciudad->id ?>--<?= $ciudad->descripcion ?></option>
+                                    <?php endwhile; ?> 
                                 </select>
                             </div>
 

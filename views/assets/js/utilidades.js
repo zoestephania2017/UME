@@ -367,6 +367,10 @@ function mensajeerror(tabla) {
 
     Swal.fire(tabla, " la identidad y/o correo electronico que se desea ingresar ya existen.", "warning");
 }
+function messageDuplicated($message) {
+
+    Swal.fire("Advertencia", $message, "warning");
+}
 
 
 //Funcion para limitar la cantidad de caracteres que puede ingresar segun el MaxLenght que se define en el elemento HTML
