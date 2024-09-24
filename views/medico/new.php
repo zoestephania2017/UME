@@ -34,7 +34,7 @@
                             </script>
                             <?php elseif (isset($_SESSION['registrar']) && $_SESSION['registrar'] == 'duplicated'): ?>
                             <script>
-                                messageDuplicated('El campo id ya existe, por favor coloca otro');
+                                messageDuplicated('El campo de identidad ya existe, por favor coloca otro');
                                 </script>
                         <?php elseif (isset($_SESSION['registrar']) && $_SESSION['registrar'] == 'existe'): ?>
                             <script>
