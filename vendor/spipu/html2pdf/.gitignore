@@ -6,7 +6,7 @@
 
 # PHPStorm
 /.idea
-
+/config/
 # Examples
 /test/*.pdf
 

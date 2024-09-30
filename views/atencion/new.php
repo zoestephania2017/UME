@@ -132,7 +132,7 @@
                                 <?php endwhile; ?> 
                             </select>
                         </div>
-
+                                <!--Cambios -->
 
                         <div class="col-md-4">
                             <label for="centroasistencial" class="form-label">Centro Asistencial:</label>
