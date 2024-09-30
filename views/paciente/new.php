@@ -11,6 +11,10 @@
                       <script>
                         mensajeadvertencia();
                        </script>
+                     <?php elseif (isset($_SESSION['registrar']) && $_SESSION['registrar'] == 'duplicated'): ?>
+                      <script>
+                        messageDuplicated('El campo de identidad ya existe, por favor coloca otro');
+                    </script>
                     <?php endif; ?>
                     <?php utilidades::destruirSesion('registrar') ?>
 

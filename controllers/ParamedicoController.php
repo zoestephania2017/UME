@@ -128,6 +128,7 @@ class ParamedicoController {
                         $vista_paramedico->index();
                     }
                 } else {
+                    try{
                     //Ejecutar la funcion insertarParamedico
                     $guardar = $paramedico->insertarParamedico();
                     if ($guardar) {
@@ -137,6 +138,10 @@ class ParamedicoController {
                     } else {
                         $_SESSION['registrar'] = "existe";
 
+                        $vista_paramedico->nuevo();
+                    }
+                    }catch(Exception $e){
+                        $_SESSION['registrar'] = "duplicated";
                         $vista_paramedico->nuevo();
                     }
                 }

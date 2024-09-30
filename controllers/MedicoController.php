@@ -29,7 +29,6 @@ class MedicoController {
         require_once 'views/medico/new.php';
     }
     
-    
          //Funcion para obtener el medico segun la ciudad mediante una funcion ajax
     public function getmedico() {
         $medico= new Medico();

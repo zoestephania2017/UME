@@ -112,6 +112,7 @@ class UsuarioController {
                         $vista_usuario->index();
                     }
                 } else {
+                    try{
                     //Ejecutar la funcion InsertarUsuario
                     $guardar = $usuario->insertarUsuario();
                     if ($guardar) {
@@ -121,6 +122,10 @@ class UsuarioController {
                     } else {
                         $_SESSION['registrar'] = "existe";
 
+                        $vista_usuario->nuevo();
+                    }
+                    }catch(Exception $e){
+                        $_SESSION['registrar'] = "duplicated";
                         $vista_usuario->nuevo();
                     }
                 }

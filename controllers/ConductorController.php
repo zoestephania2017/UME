@@ -123,6 +123,7 @@ class ConductorController {
                         $vista_conductor->index();
                     }
                 } else {
+                    try{
                     //Ejecutar la funcion insertarConductor
                     $guardar = $conductor->insertarConductor();
                     if ($guardar) {
@@ -132,6 +133,11 @@ class ConductorController {
                     } else {
                         $_SESSION['registrar'] = "existe";
 
+                        $vista_conductor->nuevo();
+                    }
+                
+                    }catch(Exception $e){
+                        $_SESSION['registrar'] = "duplicated";
                         $vista_conductor->nuevo();
                     }
                 }

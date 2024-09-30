@@ -101,6 +101,7 @@ class PacienteController {
                         $vista_paciente->index();
                     }
                 } else {// En caso de que exista se ejecutara la funcion de insertar el paciente
+                    try{
                     $guardar = $paciente->insertarPaciente();
                     if ($guardar) {
                         $_SESSION['registrar'] = "completado";
@@ -109,6 +110,11 @@ class PacienteController {
                     } else {
                         $_SESSION['registrar'] = "fallido";
                         $vista_paciente->nuevo();
+                    }
+                    
+                    }catch(Exception $e){
+                    $_SESSION['registrar'] = "duplicated";
+                    $vista_paciente->nuevo();
                     }
                 }
             } else {

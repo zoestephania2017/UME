@@ -1,6 +1,6 @@
 <?php
 
-define("base_url", "http://localhost:8083/UME/");
+define("base_url", "http://localhost:/UME/");
 define("controlador_default", "LoginController");
 define("accion_default", "login");
 define("controlador_default2", "UsuarioController");

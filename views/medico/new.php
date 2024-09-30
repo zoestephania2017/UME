@@ -12,7 +12,7 @@
                     <li class="breadcrumb-item active">Registro de un Nuevo Médico</li>
                 </ol>
             </nav>
-        </div><!-- End Page Title -->
+        </div>
 
         <section class="section">
             <div class="row">
@@ -44,7 +44,6 @@
                         <?php utilidades::destruirSesion('registrar') ?>
 
 
-                        <!-- Browser Default Validation -->
                         <form class="row g-3" action="<?= base_url ?>medico/guardar" method="POST">
                             <div class="col-md-4">
                                 <label for="identidad" class="form-label">Identidad:</label>
@@ -144,26 +143,15 @@
                             <button class="btn btn-primary rounded-pill" type="submit" onclick="return confirm('¿Esta Seguro que Desea Guardar Este Registro?')">Guardar Registro</button></center> 
                             </div>
                         </form>
-
-
                     </div>
 
                 </div>
 
-
-
-
         </section>
 
-    </main><!-- End #main -->
-
-
-
-
+    </main>
 
     <?php include ('views/layouts/piepagina.php'); ?>
-
-
 
 <?php else: ?>
 
