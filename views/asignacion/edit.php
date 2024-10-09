@@ -15,7 +15,7 @@
                     <li class="breadcrumb-item active"></li>
                 </ol>
             </nav>
-        </div><!-- End Page Title -->
+        </div>
 
         <section class="section">
             <div class="row">
@@ -25,7 +25,7 @@
                         <h5 class="card-title">Ingrese los Datos Correspondientes de la Ambulancia Asignada:</h5>
 
 
-                        <!-- Browser Default Validation -->
+                       
                         <form class="row g-3" action="<?= base_url ?>asignacion/guardar" method="POST">
 
                             <input type="number" class="form-control" id="id"  name="id" value="<?= $as->id ?>" hidden>
@@ -108,8 +108,7 @@
                             <button class="btn btn-warning rounded-pill" onclick="return confirm('¿Esta Seguro que Desea Modificar Este Registro?')" type="submit">Modificar Registro</button></center> 
                             </div>
                         </form>
-                        <!-- End Browser Default Validation -->
-
+                       
                     </div>
 
                 </div>
@@ -119,7 +118,7 @@
 
         </section>
 
-    </main><!-- End #main -->
+    </main>
 
 
 

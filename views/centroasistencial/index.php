@@ -1,3 +1,5 @@
+<!-- Solo los usuarios con estos roles pueden ver esta página -->
+     
 <?php if ($_SESSION['usuario']->id_rol == "1" || $_SESSION['usuario']->id_rol == "2"): ?>
 
 
@@ -7,6 +9,8 @@
 
     <main id="main" class="main">
 
+     <!-- Muestra el título de la página y una pequeña navegación tipo breadcrumb -->
+                        
         <div class="pagetitle">
             <h1>Ver Centros Asistenciales</h1>
             <nav>
@@ -14,7 +18,7 @@
                     <li class="breadcrumb-item">Lista de Todos los Centros Asistenciales Registrados al Nivel Nacional</li>
                 </ol>
             </nav>
-        </div><!-- End Page Title -->
+        </div>
 
         <section class="section">
             <div class="row">
@@ -22,7 +26,7 @@
                     <div class="card">
                         <div class="card-body">
 
-
+                        <!-- Muestra mensajes al usuario dependiendo de las acciones realizadas -->
                             <?php if (isset($_SESSION['registrar']) && $_SESSION['registrar'] == 'completado'): ?>
                                 <script>
                                     mensaje('Centro Asistencial', 'Modificado');
@@ -83,7 +87,7 @@
                                         </var>
                                     </tbody>
                                 </table>
-                                <!-- End Table with stripped rows -->
+                               
                             </div>
                         </div>
                     </div>
@@ -92,12 +96,12 @@
             </div>
         </section>
 
-    </main><!-- End #main -->
+    </main>
 
     <?php include ('views/layouts/piepagina.php'); ?>
 
 <?php else: ?>
-
+<!-- Redirección en Caso de No Tener Permisos a la pag de inicio -->
     <?php header("Location:" . base_url . "inicio/index"); ?>
 
 <?php endif; ?>

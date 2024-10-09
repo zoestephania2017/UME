@@ -1,5 +1,5 @@
 <?php include 'views/layouts/navegacion.php'; ?>
-
+<!-- Importación de Navegación -->
 
 
 <main id="main" class="main">
@@ -7,26 +7,23 @@
     <div class="pagetitle">
         <h1>Inicio </h1>
         <nav>
-            <ol class="breadcrumb">
+            <ol class="breadcrumb"> <!-- breadcrumb para indicar la posición dentro del sitio web -->
                 <li class="breadcrumb-item">Datos|</li>
             </ol>
         </nav>
-    </div><!-- End Page Title -->
+    </div>
 
     <section class="section dashboard">
         <div class="row">
 
-            <!-- Left side columns -->
+            
             <div class="col-lg-8">
                 <div class="row">
 
-                    <!-- Sales Card -->
                     <div class="col-xxl-4 col-md-6">
                         <div class="card info-card sales-card">
 
-
-                        
-
+                                <!--  Tarjeta de Ciudad -->
                             <div class="card-body">
                                 <h5 class="card-title">Ciudad: <span>|  <?= $_SESSION['usuario']->ciudad ?></span></h5>
 
@@ -46,13 +43,13 @@
                             </div>
 
                         </div>
-                    </div><!-- End Sales Card -->
+                    </div>
 
-                    <!-- Revenue Card -->
+                    
                     <div class="col-xxl-4 col-md-6">
                         <div class="card info-card revenue-card">
 
-
+                           <!--  Tarjeta de Usuario-->
                             <div class="card-body">
                                 <h5 class="card-title">Usuario: <span>| <?= $_SESSION['usuario']->primer_nombre ?> <?= $_SESSION['usuario']->primer_apellido ?> </span></h5>
 
@@ -66,6 +63,7 @@
 
                                             <h6>   N.º <?= $contarusuario->porusuario ?></h6>
                                         <?php endwhile; ?> 
+                                        
     <!--<span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>-->
 
                                     </div>
@@ -73,13 +71,14 @@
                             </div>
 
                         </div>
-                    </div><!-- End Revenue Card -->
+                    </div>
 
-                    <!-- Customers Card -->
+            
                     <div class="col-xxl-4 col-xl-12">
 
                         <div class="card info-card customers-card">
-
+                                   
+                           <!--  Tarjeta de Atenciones Totales-->
                             <div class="card-body">
                                 <h5 class="card-title">Atenciones: <span>| Totales</span></h5>
 
@@ -101,14 +100,15 @@
                             </div>
                         </div>
 
-                    </div><!-- End Customers Card -->
+                    </div>
 
-                    <!-- Reports -->
+                    <!-- Reportes -->
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Departamentos<span> | Atenciones</span></h5>
-                                <!-- Pie Chart -->
+                               
+                                <!-- Gráfico de pastel (Atenciones por Departamento) -->
                                 <div id="pieChart"></div>
 
                                 <script>
@@ -136,18 +136,12 @@
                                     }).render();
                                     });
                                 </script>
-                                <!-- End Pie Chart -->
-
+                               
                             </div>
                         </div>
 
 
-                    </div><!-- End Reports -->
-
-
-
-
-
+                    </div>
 
 
                     <div class="col-lg-12">
@@ -156,7 +150,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Ciudades<span> | Atenciones</span></h5>
 
-                                <!-- Bar Chart -->
+                                <!-- Gráfico de Barras (Atenciones por Ciudad)-->
                                 <div id="barCharts"></div>
 
                                 <script>
@@ -194,7 +188,7 @@
                                     }).render();
                                     });
                                 </script>
-                                <!-- End Bar Chart -->
+                               
 
                             </div>
                         </div>
@@ -204,11 +198,8 @@
 
 
                 </div>
-            </div><!-- End Left side columns -->
+            </div>
 
-
-
-            <!-- Right side columns -->
             <div class="col-lg-4">
 
                 <div class="row">
@@ -219,6 +210,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">ATENCIONES <span>| Estado</span></h5>
 
+                                   <!-- Gráfico Circular Atenciones por Estado-->
                                 <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
 
                                 <script>
@@ -269,8 +261,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Budget Report -->
-
+                
 
 
                     <div class="col-lg-12">
@@ -278,7 +269,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">PACIENTES<span>| Género</span></h5>
 
-                                <!-- Bar Chart -->
+                               
                                 <canvas id="barChart" style="max-height: 400px;"></canvas>
                                 <script>
                                     document.addEventListener("DOMContentLoaded", () => {
@@ -334,7 +325,7 @@
                                     });
                                     });
                                 </script>
-                                <!-- End Bar CHart -->
+                               
                             </div>
                         </div>
 
@@ -342,15 +333,12 @@
 
 
 
-
-                    <!-- Budget Report -->
-
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">TRASLADO<span> | Atenciones</span></h5>
 
-                                <!-- Pie Chart -->
+                               
                                 <div id="pieCharts" style="min-height: 400px;" class="echart"></div>
 
                                 <script>

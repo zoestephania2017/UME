@@ -131,8 +131,7 @@
                                     <option value="<?= $ambulancia->id ?>"><?= $ambulancia->id ?>--<?= $ambulancia->unidad ?></option>
                                 <?php endwhile; ?> 
                             </select>
-                        </div>
-                            
+                        </div>
 
                         <div class="col-md-4">
                             <label for="centroasistencial" class="form-label">Centro Asistencial:</label>

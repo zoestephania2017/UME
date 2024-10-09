@@ -231,7 +231,7 @@ class ClassLoader
     }
 
     /**
-     * Turns on searching the include path for class files.
+     * Activa o desactiva el uso del include path.
      *
      * @param bool $useIncludePath
      */

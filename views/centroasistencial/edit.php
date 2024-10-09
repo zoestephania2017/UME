@@ -28,7 +28,7 @@
 
                        
                         <form class="row g-3" action="<?= base_url ?>centroasistencial/guardar" method="POST">
-
+                         <!-- campo oculto para ID -->
                             <input type="number" class="form-control" id="id"  name="id" value="<?= $ce->id ?>" hidden>
 
                             <div class="col-md-4">

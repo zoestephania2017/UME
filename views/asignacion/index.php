@@ -13,7 +13,7 @@
                 <li class="breadcrumb-item">Lista de Ambulancias Asignadas</li>
             </ol>
         </nav>
-    </div><!-- End Page Title -->
+    </div>
 
     <section class="section">
         <div class="row">
@@ -37,7 +37,7 @@
                         <?php endif; ?>
                         <?php utilidades::destruirSesion('registrar') ?>
                         <div class="table-responsive">
-                            <!-- Table with stripped rows -->
+                    
                             <table class="table datatable">
 
                                 <thead>
@@ -83,7 +83,7 @@
                                     </var>
                                 </tbody>
                             </table>
-                            <!-- End Table with stripped rows -->
+                            
                         </div>
                     </div>
                 </div>

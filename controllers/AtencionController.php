@@ -34,7 +34,7 @@ class AtencionController {
         $salas = $sala->obtenerdatos('sala');
         $diagnosticos = $diagnostico->obtenerdatos('diagnostico');
         $pacientes = $paciente->obtenerPaciente($_SESSION['usuario']->id_ciudad);
-        $ambulancias = $ambulancia->obtenerAmbulancia();
+        $ambulancias = $ambulancia->getAmbulancia(25,3);
         $puntos = $punto->obtenerPuntoEstrategico();
         $CentrosAsistencial = $CentroAsistencial->obtenerCentroAsistencial();
         

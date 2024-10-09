@@ -1,3 +1,4 @@
+<!-- El formulario solo será visible si el usuario tiene uno de dos roles específicos -->
 
 <?php if ($_SESSION['usuario']->id_rol == "1" || $_SESSION['usuario']->id_rol == "2"): ?>
 
@@ -15,7 +16,7 @@
                     <li class="breadcrumb-item active">Datos del Ambulancia</li>
                 </ol>
             </nav>
-        </div><!-- End Page Title -->
+        </div><
 
         <section class="section">
             <div class="row">
@@ -26,7 +27,7 @@
                         <h5 class="card-title">Ingrese los Datos de la Ambulancia a Modificar</h5>
 
 
-                        <!-- Browser Default Validation -->
+                        
                         <form class="row g-3" action="<?= base_url ?>ambulancia/guardar" method="POST">
 
                             <input type="number" class="form-control" id="id"  name="id" value="<?= $pe->id ?>" hidden>
@@ -38,7 +39,7 @@
 
                             <div class="col-md-4">
                                 <label for="departamento1d" class="form-label">Departamento:</label>
-
+                             <!--actualizar dinámicamente las opciones de ciudad y punto estratégico cuando se selecciona un departamento o ciudad -->
                             <select class="form-select" id="departamento"  name="departamento" onchange="javascript:getciudad()" required>
                                 <option selected disabled value="">Seleccione un departamento...</option>
                                 <?php while ($departamento = $departamentos->fetch_object()): ?> 
@@ -81,21 +82,17 @@
                         <center><button class="btn btn-warning rounded-pill" onclick="return confirm('¿Estas seguro que desea modificar el Ambulancia?')" type="submit">Modificar</button></center> 
                     </div>
                     </form>
-                    <!-- End Browser Default Validation -->
-
+                   
                 </div>
 
             </div>
 
-
-
-
         </section>
 
-    </main><!-- End #main -->
+    </main>
 
 
-
+<!-- pie de pagina -->
     <?php include ('views/layouts/piepagina.php'); ?>
 
 

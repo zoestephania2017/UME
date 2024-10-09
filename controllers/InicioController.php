@@ -2,12 +2,14 @@
 
 require_once 'models/Inicio.php';
 
-class InicioController {
-
+class InicioController { //El controlador para manejar 
+     //las acciones relacionadas con la página de inicio
+                        
     public function index() {
 
         require_once 'models/Base.php';
-
+       
+        //Cargar estadísticas
         $contarciudad = new Inicio();
         $contarusuario = new Inicio();
         $totalatencion = new Inicio();
@@ -20,6 +22,8 @@ class InicioController {
         $totalciudad1 = new Inicio();
         $totaldepartamento = new Inicio();
         $totaldepartamento1 = new Inicio();
+
+        //Llamadas a métodos del modelo
         $contarciudades = $contarciudad->contarciudad($_SESSION['usuario']->id_ciudad); //contar cantidad de ciudades por el usuario logeado
         $contarusuarios = $contarusuario->contarusuario($_SESSION['usuario']->id); //contar cantidad de  por el usuario logeado
         $totalatenciones = $totalatencion->totalatenciones(); //contar el total de atenciones brindadas
@@ -31,6 +35,8 @@ class InicioController {
         $totaldepartamento1 = $totalgenero1->totaldepartamentos(); //contar el total de atenciones por departamento que se han atendido (funcion para cargar el total de atenciones por departamento, complementa al de arriba)
         $totalciudades = $totalciudad->totalciudades(); //contar el total de atenciones por ciudad que se han atendido (funcion para cargar la descripcion de atenciones por ciudad, complementa al de abajo)
         $totalciudades1 = $totalciudad1->totalciudades(); //contar el total de atenciones por ciudad que se han atendido (funcion para cargar el total de atenciones por ciudad, complementa al de arriba)
+        
+        
         require_once 'views/inicio/index.php';
     }
 

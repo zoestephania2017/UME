@@ -13,7 +13,7 @@
                 <li class="breadcrumb-item">Lista de Atenciones Registradas:</li>
             </ol>
         </nav>
-    </div><!-- End Page Title -->
+    </div>
 
     <section class="section">
         <div class="row">

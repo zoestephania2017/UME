@@ -226,12 +226,7 @@ class Datamatrix {
 
 // -----------------------------------------------------------------------------
 
-	/**
-	 * This is the class constructor.
-	 * Creates a datamatrix object
-	 * @param string $code Code to represent using Datamatrix.
-	 * @public
-	 */
+
 	public function __construct($code) {
 		$barcode_array = array();
 		if ((is_null($code)) OR ($code == '\0') OR ($code == '')) {
