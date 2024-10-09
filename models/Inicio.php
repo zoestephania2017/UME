@@ -32,8 +32,6 @@ class Inicio {
         return $query;
     }
     
-    
-    
          //Funcion para contar las atenciones de todas los departamentos
     public function totaldepartamentos() {
         $query = $this->db->query("SELECT d.descripcion as departamento ,COUNT(a.id) as totales FROM  paciente as p, atencion as a,departamento as d, ciudad as c WHERE a.id_paciente=p.id AND a.id_estado=5 AND p.id_ciudad=c.id AND c.id_departamento=d.id GROUP BY d.descripcion");

@@ -1,3 +1,4 @@
+<!-- Solo los usuarios con estos roles pueden ver esta página -->
 
 <?php if ($_SESSION['usuario']->id_rol == "1" || $_SESSION['usuario']->id_rol == "2"): ?>
 
@@ -18,7 +19,6 @@
     <?php utilidades::destruirSesion('registrar') ?>
 
 
-
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -30,7 +30,7 @@
                     <li class="breadcrumb-item active">Registro de una Nueva Ambulancia</li>
                 </ol> 
             </nav>
-        </div><!-- End Page Title -->
+        </div>
 
         <section class="section">
             <div class="row">
@@ -39,15 +39,10 @@
                     <div class="card-body">
                         <h5 class="card-title">Ingrese los Datos Correspondientes de la Ambulancia:</h5>
 
-
-
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title"></h5>
 
-
-
-                        <!-- Browser Default Validation -->
                         <form class="row g-3" action="<?= base_url ?>ambulancia/guardar" method="POST">
                             <div class="col-md-4">
                                 <label for="descripcion" class="form-label">Registro de Ambulancia:</label>
@@ -64,8 +59,6 @@
                                     <?php endwhile; ?> 
                                 </select>
                             </div>
-
-
 
                             <div class="col-md-4">
                                 <label for="ciuda1d" class="form-label">Ciudad:</label>
@@ -92,29 +85,17 @@
                             <div class="col-12">
                             <button class="btn btn-primary rounded-pill" onclick="return confirm('¿Esta Seguro que Desea Guardar Este Registro?')" type="submit" >Guardar Registro</button></center> 
                             </div>
-                        </form>
-                        <!-- End Browser Default Validation -->
+                        </form>        
 
                     </div>
 
                 </div>
-
-
-
-
         </section>
 
-    </main><!-- End #main -->
-
-
-
-
+    </main>
 
 
     <?php include ('views/layouts/piepagina.php'); ?>
-
-
-
 
 <?php else: ?>
 

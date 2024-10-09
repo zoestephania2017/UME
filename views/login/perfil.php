@@ -10,7 +10,7 @@
             </ol>
 
         </nav>
-    </div><!-- End Page Title -->
+    </div>
 
     <section class="section profile">
         <div class="row">
@@ -31,7 +31,7 @@
 
                 <div class="card">
                     <div class="card-body pt-3">
-                        <!-- Bordered Tabs -->
+            
                         <ul class="nav nav-tabs nav-tabs-bordered">
 
                             <li class="nav-item">
@@ -127,7 +127,7 @@
                             <div class="tab-pane fade pt-3" id="profile-change-password">
 
 
-                                <!-- Change Password Form -->
+                        
                                 <form id="formulario" name="formulario" class="row g-3" action="<?= base_url ?>usuario/cambiarcontrasena" method="POST">
 
                                     <div class="row mb-3">
@@ -160,7 +160,7 @@
                             </div>
 
 
-                        </div><!-- End Bordered Tabs -->
+                        </div>
 
                     </div>
                 </div>
@@ -169,7 +169,7 @@
         </div>
     </section>
 
-</main><!-- End #main -->
+</main>
 
 
 <?php include ('views/layouts/piepagina.php'); ?>

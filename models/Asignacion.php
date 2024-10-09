@@ -64,8 +64,6 @@ class Asignacion {
     }
 
 
-
-
     //Funcion para obtener datos de la atencion
     public function obtenerAsignacion() {
             $query = $this->db->query("SELECT asi.id,p.id as idparamedico,p.identidad as identidadparamedico, p.primer_nombre as nombreparamedico, p.primer_apellido as apellidoparamedico,co.id as idconductor, co.identidad as identidadconductor,co.primer_nombre as nombreconductor,co.primer_apellido as apellidoconductor,a.id as idambulancia,a.unidad as unidad,d.id as iddepartamento, d.descripcion as departamento, c.id as idciudad, c.descripcion as ciudad, pu.id as idpunto, pu.descripcion as punto,asi.fecha_ingreso as fecha_ingreso  FROM departamento as d, ciudad as c,puntoestrategico as pu,asignacionambulancia as asi, paramedico as p, conductor co,ambulancia as a, estado as e WHERE c.id_departamento=d.id AND pu.id_ciudad=c.id AND a.id_punto=pu.id AND p.id_ciudad=c.id AND co.id_ciudad=c.id AND asi.id_paramedico=p.id AND asi.id_conductor=co.id AND asi.id_ambulancia=a.id AND asi.id_estado=e.id AND (asi.id_estado=3 OR asi.id_estado=5) ORDER BY asi.id ASC");
@@ -117,9 +115,6 @@ class Asignacion {
         }
         return $resultado; // dpendiendo el query retorna un valor verdadero o falso
     }
-
-
-    
 
 
 }

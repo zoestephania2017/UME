@@ -22,7 +22,7 @@ class PacienteController {
         $ciudad = new Ciudad();
 
 
-        $departamentos = $departamento->getdepartamento($_SESSION['usuario']->iddepartamento);
+        $departamentos = $departamento->obtenerDepartamento();
         $ciudades = $ciudad->getCiudad($_SESSION["usuario"]->iddepartamento);
         require_once 'views/paciente/new.php';
     }

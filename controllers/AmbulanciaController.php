@@ -32,7 +32,7 @@ class AmbulanciaController {
     //Funcion para obtener la ambulancia segun el punto estrategico mediante una funcion ajax
     public function getAmbulancia() {
         $ambulancia = new Ambulancia();
-        $ambulancias = $ambulancia->getAmbulancia($_POST['punto'], '5');
+        $ambulancias = $ambulancia->getAmbulancia($_POST['punto'], '3');
         echo "<option selected disabled value=''>Seleccione una Ambulancia...</option>";
         while ($ambulancia = $ambulancias->fetch_object()) {
             echo "<option value='" . $ambulancia->id . "'>--$ambulancia->unidad--</option>";
@@ -52,7 +52,7 @@ class AmbulanciaController {
     //Funcion para obtener la ambulancia segun el punto estrategico mediante una funcion ajax
     public function reporteambulancia() {
         $ambulancia = new Ambulancia();
-        $ambulancias = $ambulancia->getAmbulancia($_POST['punto'], '5');
+        $ambulancias = $ambulancia->getAmbulancia($_POST['punto'], '3');
         echo "<option selected disabled value=''>Seleccione una Ambulancia...</option>";
         while ($ambulancia = $ambulancias->fetch_object()) {
             echo "<option value='" . $ambulancia->id . "'>--$ambulancia->unidad--</option>";

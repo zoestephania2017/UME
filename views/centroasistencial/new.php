@@ -1,3 +1,4 @@
+<!-- Solo los usuarios con estos roles pueden ver esta página -->
 
 <?php if ($_SESSION['usuario']->id_rol == "1" || $_SESSION['usuario']->id_rol == "2"): ?>
 
@@ -15,22 +16,22 @@
             mensajeadvertencia();
         </script>
     <?php endif; ?>
+    
+    <!-- elimina la variable de sesión para evitar mostrar el mensaje repetidamente -->
     <?php utilidades::destruirSesion('registrar') ?>
-
-
 
     <main id="main" class="main">
 
         <div class="pagetitle">
             <h1>Nuevo Centro Asistencial</h1>
             <nav>
-                <ol class="breadcrumb">
+                <ol class="breadcrumb"><!-- un breadcrumb que indica la ubicación en el sistema -->
 
 
                     <li class="breadcrumb-item active">Registro de Centros Asistenciales</li>
                 </ol>
             </nav>
-        </div><!-- End Page Title -->
+        </div>
 
         <section class="section">
             <div class="row">
@@ -46,8 +47,9 @@
 
 
 
-                        <!-- Browser Default Validation -->
+                        <!-- Define la URL donde se enviará el formulario -->
                         <form class="row g-3" action="<?= base_url ?>centroasistencial/guardar" method="POST">
+                            
                             <div class="col-md-4">
                                 <label for="descripcion" class="form-label">Nombre del Centro Asistencial:</label>
                                 <input type="text" class="form-control" id="descripcion"  name="descripcion" required>
@@ -78,7 +80,7 @@
                             <button class="btn btn-primary rounded-pill" onclick="return confirm('¿Esta Seguro que Desea Guardar Este Centro Asistencial?')" type="submit" >Guardar Dato</button></center> 
                             </div>
                         </form>
-                        <!-- End Browser Default Validation -->
+                        <!-- Botón que envía el formulario y guarda los datos en la base de datos -->
 
                     </div>
 
@@ -89,20 +91,12 @@
 
         </section>
 
-    </main><!-- End #main -->
-
-
-
-
-
+    </main>
 
     <?php include ('views/layouts/piepagina.php'); ?>
 
-
-
-
 <?php else: ?>
-
+<!-- Si el usuario no tiene los permisos necesarios, redirige a la página de inicio -->
     <?php header("Location:" . base_url . "inicio/index"); ?>
 
 <?php endif; ?>
